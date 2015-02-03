@@ -2,6 +2,7 @@ package ;
 
 import org.si.b3.CMLMovieClip;
 import org.si.b3.modules.CMLScene;
+import Main;
 
 class MainScene extends CMLScene {
     public override function enter():Void {
@@ -9,9 +10,9 @@ class MainScene extends CMLScene {
         Main.scoreManager.reset(false);
         Main.actManager.reset();
         Main.actManager.start();
+        Main.resManager.sionDriver.play(Main.resManager.bgm);
 #if SION_ENABLED
-        Noml.resManager.sionDriver.play(resManager.bgm);
-        Noml.resManager.sionDriver.playSound(6, 1, 0, 0, 2);
+        Main.resManager.sionDriver.playSound(6, 1, 0, 0, 2);
 #end
     }
 
@@ -19,9 +20,7 @@ class MainScene extends CMLScene {
         Main.scoreManager.update();
         Main.actManager.update();
         if (Main.mc.control.getPressedFrame(CMLMovieClip.KEY_ESCAPE) > 15) {
-#if SION_ENABLED
-            Noml.resManager.sionDriver.play();
-#end
+            Main.resManager.sionDriver.play();
             Main.mc.scene.id = "title";
         }
     }

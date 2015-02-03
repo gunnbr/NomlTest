@@ -1,7 +1,7 @@
 package ;
 
 import InstructionsScene;
-import openfl._v2.display.Sprite;
+import openfl.display.Sprite;
 import org.si.b3.CMLMovieClip;
 
 #if ouya
@@ -33,10 +33,9 @@ class Main extends Sprite{
     }
 
     public function setup():Void {
-#if SION_ENABLED
+        addChild(resManager.sionDriver);
         resManager.sionDriver.bpm = 152;
         resManager.sionDriver.play();
-#end
     }
 }
 

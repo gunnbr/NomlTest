@@ -10,7 +10,8 @@
 
 	<haxelib name="openfl" />
 	<haxelib name="openfl-ouya" />
-	<haxelib name="cannonml" />
+    <haxelib name="cannonml" />
+    <haxelib name="sion" />
 
 	<assets path="Assets" rename="assets" exclude="openfl.svg" />
 	<icon path="Assets/openfl.svg" />
